@@ -4,7 +4,8 @@
   "description": "The Odin Project To-Do List is a beginner-friendly JavaScript project that teaches DOM manipulation, event handling, and project structuring. It helps learners build a functional task manager, reinforcing core web development concepts through hands-on practice.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack serve"
   },
   "keywords": [],
   "author": "",

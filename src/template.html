@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Spice&family=Bungee+Tint&family=Bytesized&family=Jersey+10&family=Jersey+15&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Todo App</title>
 </head>
@@ -18,12 +19,12 @@
             <h1>ToDo App</h1>
             <button id="menu-toggle">☰</button>
         </div>
-        <p>👋 Hello, <span>Anup</span>! Welcome BACK.</p>
+        <p>👋 Hello, <span class="userName">Anup</span>! Welcome BACK.</p>
         <p class="date">📅 <script>document.write(new Date().toLocaleDateString("en-ca"))</script></p>
     </header>
     <div class="header">
         <div class="date-greet">
-            <p>👋 Hello, <span>Anup</span>!</p>
+            <p>👋 Hello, <span class="mobUserName">Anup</span>!</p>
             <p class="date">📅 <script>document.write(new Date().toLocaleDateString("en-ca"))</script></p>
         </div>
         <hr>
@@ -71,11 +72,52 @@
 
             </section>
         </aside>
-        <section class="body"></section>
+        <section class="body">
+            <form>
+                <label>
+                    <input type="text" name="task" id="task" placeholder="What's on your mind today?">
+                </label>
+                <div class="select-wrapper">
+                    <select name="priority" id="priority">
+                        <option value="high">High</option>
+                        <option value="mid">Mid</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <label>
+                    <input type="date" name="dueDate" id="dueDate">
+                </label>
+                <button type="submit" class="addTaskBtn">Add task</button>
+            </form>
+            <hr />
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Tasks</th>
+                    <th>Priority</th>
+                    <th>Due Date</th>
+                    <th>Remaining Day</th>
+                    <th>Action</th>
+                </tr>
+            </table>
+        </section>
     </main>
     <footer>
         <p>Anup Banskota © <script>document.write(new Date().getFullYear())</script></p>
     </footer>
+
+    <dialog class="initNameInp"> 
+        <div class="dialog">
+            <h2>Enter your name to proceed</h2>
+        <form action="">
+            <label>
+                <input type="text" name="name" id="name" placeholder="Please enter your name"/>
+            </label>
+            <button type="button" class="initNameSubmit">Submit</button>
+        </form>
+        </div>
+    </dialog>
     
 </body>
 </html>
