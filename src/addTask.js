@@ -25,7 +25,6 @@ export const addTask = (() => {
         this.priority = priority;
         this.dueDate = dueDate;
         this.remDay = calcRemDay(this.dueDate);
-        console.log(this.remDay);
     }
     
     function addTasks(task, priority, dueDate) {
@@ -42,15 +41,18 @@ export const addTask = (() => {
         });
         localStorage.setItem("Tasks", JSON.stringify(updateTask));
     });
-    
-    const addTaskBtn = document.querySelector(".addTaskBtn");
+
     
     const addBtnTask = () => {
+        const addTaskBtn = document.querySelector(".addTaskBtn");
+        if (!addTaskBtn) return;
+
         addTaskBtn.addEventListener("click", (e) => {
             e.preventDefault();
             const inpTask = document.querySelector("#task").value;
             const priority = document.querySelector("#priority").value;
             const dueDate = document.querySelector('#dueDate').value;
+            
             addTasks(inpTask, priority, dueDate);
             setTimeout(() => location.reload(), 200);
         })

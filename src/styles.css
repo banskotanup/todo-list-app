@@ -130,8 +130,9 @@ aside section{
 }
 
 .active{
-    background-color: #0B121E;
+    background-color: darkorange !important;
     border-radius: 10px;
+    color: #0B121E !important;
 }
 
 .home-sidebar-content div button{
@@ -142,14 +143,15 @@ aside section{
     background-color: rgba(0, 0, 0, 0);
     border: none;
     color: #bec3cf;
-    margin-left: 10px;
+    padding: 10px;
     cursor: pointer;
 }
 
-.home-sidebar-content div:hover{
-    background-color: #202B3C;
+.home-sidebar-content div button:hover{
+    background-color: rgb(168, 156, 132);
     border-radius: 10px;
     margin-left: 10px;
+    color: #0B121E;
 }
 
 .low-sidebar{
@@ -169,18 +171,19 @@ aside section{
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #0B121E;
+    background-color: darkorange;
+    color: #0B121E;
     height: 40px;
     width: 100%;
     padding: 10px;
     border-top: 2px solid white;
-    border-left: 2px solid rgb(184, 127, 21);
     border-radius: 10px;
 }
 
 .default-project:hover{
-    background-color: #19263d;
+    background-color: rgb(168, 156, 132);
     cursor: pointer;
+    color: #0B121E;
 }
 
 .default-project .btn button{
@@ -195,14 +198,15 @@ aside section{
     background-color: rgba(0, 0, 0, 0);
     border: none;
     color: #bec3cf;
-    margin-left: 10px;
+    padding: 10px;
     cursor: pointer;
 }
 
-.btn-add:hover{
-    background-color: #202B3C;
+.btn-add button:hover{
+    background-color:rgb(168, 156, 132);
     border-radius: 10px;
     margin-left: 10px;
+    color: #0B121E !important;
 }
 
 

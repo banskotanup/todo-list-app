@@ -39,11 +39,11 @@
                 </div>
                 <hr>
                 <div class="home-sidebar-content">
-                    <div class="active">
-                        <button><i class="fas fa-tasks"></i> All Tasks</button>
+                    <div >
+                        <button class="allTaskBtn active"><i class="fas fa-tasks"></i> All Tasks</button>
                     </div>
                     <div>
-                        <button><i class="fas fa-calendar-day"></i> Today</button>
+                        <button class="todayBtn"><i class="fas fa-calendar-day"></i> Today</button>
                     </div>
                     <div>
                         <button><i class="fas fa-star"></i> Important</button>
@@ -62,7 +62,7 @@
                 <div class="default-project">
                     <p>Default Project</p>
                     <div class="btn">
-                        <button><i class="far fa-edit"></i></button>
+                        <button><i class="fas fa-edit" style="color: #1b1b1d;"></i></button>
                         <button><i class="fas fa-trash"></i></button>
                     </div>
                 </div>
@@ -73,33 +73,12 @@
             </section>
         </aside>
         <section class="body">
-            <form>
-                <label>
-                    <input type="text" name="task" id="task" placeholder="What's on your mind today?">
-                </label>
-                <div class="select-wrapper">
-                    <select name="priority" id="priority">
-                        <option value="high">High</option>
-                        <option value="mid">Mid</option>
-                        <option value="low">Low</option>
-                    </select>
-                    <i class="fas fa-angle-down"></i>
-                </div>
-                <label>
-                    <input type="date" name="dueDate" id="dueDate">
-                </label>
-                <button type="submit" class="addTaskBtn">Add task</button>
-            </form>
-            <hr />
+            <div class="form">
+
+            </div>
+            <hr>
             <table>
-                <tr>
-                    <th></th>
-                    <th>Tasks</th>
-                    <th>Priority</th>
-                    <th>Due Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
+                
             </table>
         </section>
     </main>

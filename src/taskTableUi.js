@@ -1,7 +1,7 @@
 export const taskTableUi = (() => {
     function taskTbl(taskId, task, priority, dueDate, remDay) {
         if (remDay === "Expired") {
-            const table = document.querySelector("tbody");
+            const table = document.querySelector("table");
     
             const taskTable = document.createElement("tr");
             taskTable.classList.add("expired");
@@ -43,7 +43,7 @@ export const taskTableUi = (() => {
         taskTable.appendChild(td6);
         }
         else if(remDay === "Completed"){
-        const table = document.querySelector("tbody");
+        const table = document.querySelector("table");
     
             const taskTable = document.createElement("tr");
             taskTable.setAttribute("style", "color: #14B8A6")
@@ -86,7 +86,7 @@ export const taskTableUi = (() => {
         taskTable.appendChild(td6);
         }
         else{
-        const table = document.querySelector("tbody");
+        const table = document.querySelector("table");
     
         const taskTable = document.createElement("tr");
         table.appendChild(taskTable);
