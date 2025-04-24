@@ -12,7 +12,7 @@ export const addTask = (() => {
 
         let days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-        return days < 0 ? "Expired" : days === 0 ? "due today" : `${days} days remaining`;
+        return days < 0 ? "Expired" : days === 0 ? "Due today" : `${days} days remaining`;
     }
 
     function Tasks(task, priority, dueDate) {

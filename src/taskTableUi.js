@@ -145,10 +145,45 @@ export const taskTableUi = (() => {
     
     const storedTasks = () => {
         storedTask.map((task) => {
-            taskTbl(task.id, task.task, task.priority, task.dueDate, task.remDay);
+            if (task.remDay !== "Expired" && task.remDay !== "Completed") {
+                taskTbl(task.id, task.task, task.priority, task.dueDate, task.remDay);
+            }
         }
         );
     }
 
-    return { storedTasks };
+    const filteredTask = () => {
+        storedTask.forEach((task) => {
+            if (task.remDay === "Due today") {
+                taskTbl(task.id, task.task, task.priority, task.dueDate, task.remDay);
+            }
+        })
+    }
+
+    const filteredTaskOnPriority = () => {
+        storedTask.forEach((task) => {
+            if (task.priority === "high" && task.remDay !== "Expired" && task.remDay !== "Completed") {
+                taskTbl(task.id, task.task, task.priority, task.dueDate, task.remDay);
+            }
+        })
+    }
+
+    const filteredTaskOnComplete = () => {
+        storedTask.forEach((task) => {
+            if (task.remDay === "Completed" && new Date(task.dueDate).toLocaleDateString() === new Date().toLocaleDateString()) {
+                taskTbl(task.id, task.task, task.priority, task.dueDate, task.remDay);
+            }
+        })
+    }
+
+    const filteredTaskOnExpired = () => {
+        storedTask.forEach((task) => {
+            if (task.remDay === "Expired") {
+                taskTbl(task.id, task.task, task.priority, task.dueDate, task.remDay);
+            }
+        })
+    }
+    
+
+    return { storedTasks, filteredTask, filteredTaskOnPriority, filteredTaskOnComplete, filteredTaskOnExpired };
 })();

@@ -14,3 +14,6 @@ sidebarBtnHandler.initTaskAddLoad();
 sidebarToggle();
 sidebarBtnHandler.allTaskBtn();
 sidebarBtnHandler.todBtn();
+sidebarBtnHandler.impoBtn();
+sidebarBtnHandler.completeBtn();
+sidebarBtnHandler.expiredBtn();
