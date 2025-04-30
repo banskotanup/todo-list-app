@@ -33,14 +33,16 @@ export const addTask = (() => {
         localStorage.setItem("Tasks", JSON.stringify(tasksArrObj));
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const storedTask = JSON.parse(localStorage.getItem("Tasks")) || [];
-        const updateTask = storedTask.map((task) => {
-            task.remDay = calcRemDay(task.dueDate, task.remDay);
-            return task;
-        });
-        localStorage.setItem("Tasks", JSON.stringify(updateTask));
-    });
+    const domLoad = () => {
+        document.addEventListener("DOMContentLoaded", () => {
+            const storedTask = JSON.parse(localStorage.getItem("Tasks")) || [];
+            const updateTask = storedTask.map((task) => {
+                task.remDay = calcRemDay(task.dueDate, task.remDay);
+                return task;
+            });
+            localStorage.setItem("Tasks", JSON.stringify(updateTask));
+        })
+    };
 
     
     const addBtnTask = () => {
@@ -58,5 +60,5 @@ export const addTask = (() => {
         })
     }
 
-    return { addBtnTask, tasksArrObj };
+    return { addBtnTask, tasksArrObj, domLoad };
 })();

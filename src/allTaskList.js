@@ -26,7 +26,6 @@ export const allTasksList = (() => {
         th6.textContent = "Action";
         tr.appendChild(th6);
 
-
         return { tr };
     }
     return { allTaskList };
