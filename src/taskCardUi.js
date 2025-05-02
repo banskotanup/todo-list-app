@@ -8,7 +8,7 @@ export const taskCard = (() => {
             div.setAttribute("style", "color: #6B7283");
             const h3 = document.createElement("h3");
             h3.classList.add("card-task-name");
-            h3.innerHTML = `<span>Tasks:</span> ${task}`;
+            h3.innerHTML = `<span>Task:</span> ${task}`;
             div.appendChild(h3);
 
             const hr = document.createElement("hr");
@@ -65,7 +65,7 @@ export const taskCard = (() => {
             div.setAttribute("style", "color: #14B8A6");
             const h3 = document.createElement("h3");
             h3.classList.add("card-task-name");
-            h3.innerHTML = `<span>Tasks:</span> ${task}`;
+            h3.innerHTML = `<span>Task:</span> ${task}`;
             div.appendChild(h3);
 
             const hr = document.createElement("hr");
