@@ -1,75 +1,170 @@
-@media (max-width: 669px){
-    html, body{
-        overflow-x: hidden;
-    }
-    header{
-        flex-direction: column;
-    }
+@media (max-width: 669px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  header {
+    flex-direction: column;
     
-    aside {
-        position: fixed;
-        top: 0;
-        left: 0;
+  }
+
+  header div{
+    height: 100px;
+  }
+
+  aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    background-color: #0b121e;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1000;
+    border-radius: 0%;
+  }
+
+  aside.active-sidebar {
+    transform: translateX(0);
+  }
+
+  header div button {
+    display: block;
+  }
+
+  aside section {
+    margin-left: 5px;
+  }
+
+  .active {
+    background-color: #202b3c;
+  }
+
+  header p {
+    display: none;
+  }
+
+  .header {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+  }
+
+  .header .date {
+    font-size: 1.2em;
+  }
+
+  .header p {
+    font-size: 1.7em;
+    margin-top: 20px;
+    margin-left: 15px;
+  }
+
+  .header p span {
+    color: rgb(216, 146, 15);
+    font-weight: bold;
+  }
+
+  .date-greet {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .header .welcome-back {
+    font-size: 1.7em;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .body{
+    width: 100vw;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formDiv2{
+    display: flex;
+  }
+
+  #task {
+    width: 70vw;
+  }
+
+  .formDiv1{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-left: 9vw;
+  }
+
+  #priority {
+    width: 40vw;
+    transform: translateX(-45%);
+    }
+
+    .select-wrapper i {
+        transform: translateX(-20vw);
+    }
+
+    #dueDate {
+        width: 40vw;
+    }
+
+    .addTaskBtn {
+        width: 40vw;
+    }
+
+    .initNameInp {
+        height: 200px;
+        width: 400px;
+        top: 15%;
+        left: 25px;
+    }
+
+    .initNameInp h2 {
+        font-size: 1.4em;
+    }
+
+    .initNameInp form label input {
         width: 80vw;
-        background-color: #0B121E;
-        height: 100%;
-        transform: translateX(-100%);
-        z-index: 1000;
-        border-radius: 0%;
-      }
-    
-    aside.active-sidebar {
-        transform: translateX(0);
-      }
-
-    header div button{
-        display: block;
     }
 
-    aside section{
-        margin-left: 5px;
-    }
-
-    .active{
-        background-color: #202B3C;
-    }
-
-    header p{
+    table{
         display: none;
     }
 
-    .header{
-        display: flex;
-        background-color: rgba(0, 0, 0, 0.5);
+    .task-list{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 5px;
+        margin-bottom: 30px;
+    }
+
+    .card{
+        width: 95vw;
+        height: 97%;
+        margin-left: 10px;
+    }
+
+    .info{
         flex-direction: column;
+        padding: 10px;
     }
-
-    .header .date{
-        font-size: 1.2em;
-    }
-
-    .header p{
-        font-size: 1.7em;
-        margin-top: 20px;
-        margin-left: 15px;
-    }
-
-    .header p span{
-        color: rgb(216, 146, 15);
-        font-weight: bold;
-    }
-
-    .date-greet{
-        display: flex;
+    .info p{
         margin-bottom: 10px;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
     }
 
-    .header .welcome-back{
-        font-size: 1.7em;
-        margin-top: 10px;
-        text-align: center;
+    .update-btn{
+        width: 20vw;
+    }
+
+    .delete-btn{
+        width: 20vw;
     }
 }

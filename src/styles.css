@@ -9,6 +9,14 @@ html{
     overflow-x: hidden;
 }
 
+.formDiv2{
+    display: flex;
+}
+
+.formDiv1{
+    display: flex;
+}
+
 body{
     position: relative;
     z-index: 1;
@@ -478,4 +486,68 @@ tr:nth-child(even){
 .delete-btn:hover{
     background-color: rgb(97, 28, 28);
     color: rgb(201, 189, 189);
+}
+
+.task-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 10px;
+    padding: 20px;
+    height: 42vh;
+    width: 35vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-left: 3px solid purple;
+    border-radius: 20px;
+}
+
+.card h3{
+    margin: 10px;
+    font-size: 1.3em;
+}
+
+.card h3 span{
+    color: orange;
+}
+
+.info{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info p{
+    font-size: 1.2em;
+}
+
+.info p span{
+    color: orange;
+}
+
+.checkingInp{
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.checkingInp label{
+    color: grey;
+    margin-left: 10px;
+}
+
+.card-btn{
+    margin-top: 20px;
+}
+
+.task-list{
+    display: none;
+}
+
+.hide{
+    display: none;
 }

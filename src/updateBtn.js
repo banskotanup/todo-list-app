@@ -93,7 +93,6 @@ export function submit() {
 
       const taskId = e.target.dataset.id;
       const updatedTask = document.querySelector("#task").value;
-      console.log(updatedTask);
       const updatedPriority = document.querySelector("#priority").value;
       const updatedDueDate = document.querySelector("#dueDate").value;
 

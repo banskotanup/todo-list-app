@@ -4,153 +4,192 @@ import { allTasksList } from "./allTaskList";
 import { taskTableUi } from "./taskTableUi";
 import { checkBox } from "./checkBox";
 import { submit, updateButton } from "./updateBtn";
+import { taskCard } from "./taskCardUi";
+import { submitCardUpdate, updateCardButton } from "./updateCardBtn";
 
 export const sidebarBtnHandler = (() => {
-    const sectionBody = document.querySelector(".body");
+  const sectionBody = document.querySelector(".body");
 
-    const allTask = document.querySelector(".allTaskBtn");
-    const todayBtn = document.querySelector(".todayBtn");
-    const impBtn = document.querySelector(".impBtn");
-    const compBtn = document.querySelector(".compBtn");
-    const expBtn = document.querySelector(".expBtn");
+  const allTask = document.querySelector(".allTaskBtn");
+  const todayBtn = document.querySelector(".todayBtn");
+  const impBtn = document.querySelector(".impBtn");
+  const compBtn = document.querySelector(".compBtn");
+  const expBtn = document.querySelector(".expBtn");
 
+  const initTaskAddLoad = () => {
+    document.addEventListener("DOMContentLoaded", () => {
+      const table = document.querySelector("table");
+      const formDiv = document.querySelector(".form");
 
-    const initTaskAddLoad = () => {
-        document.addEventListener("DOMContentLoaded", () => {
-            const table = document.querySelector("table");
-            const formDiv = document.querySelector(".form");
+      const { form } = allTasksInp.allTaskInp();
+      const { tr } = allTasksList.allTaskList();
 
-            const { form } = allTasksInp.allTaskInp();
-            const { tr } = allTasksList.allTaskList();
+      formDiv.appendChild(form);
 
-            formDiv.appendChild(form);
+      table.appendChild(tr);
+      taskTableUi.storedTasks();
+      taskCard.storedTasks();
 
-            table.appendChild(tr);
-            taskTableUi.storedTasks();
+      allTask.classList.add("active");
+      todayBtn.classList.remove("active");
+      impBtn.classList.remove("active");
+      compBtn.classList.remove("active");
+      expBtn.classList.remove("active");
+      addTask.addBtnTask();
+      checkBox();
+      updateButton();
+      submit();
+      updateCardButton();
+      submitCardUpdate();
+    });
+  };
 
-            allTask.classList.add("active");
-            todayBtn.classList.remove("active");
-            impBtn.classList.remove("active");
-            compBtn.classList.remove("active");
-            expBtn.classList.remove("active");
-            addTask.addBtnTask();
-            checkBox();
-            updateButton();
-            submit();
+  const allTaskBtn = () => {
+    allTask.addEventListener("click", () => {
+      const table = document.createElement("table");
+      table.textContent = "";
 
-        })
-    }
+      const taskList = document.querySelector(".task-list");
+      if (taskList) taskList.textContent = "";
 
-    const allTaskBtn = () => {
-        allTask.addEventListener("click", () => {
-            const table = document.createElement("table");
-            table.textContent = "";
-            
-            const { tr } = allTasksList.allTaskList();
+      const { tr } = allTasksList.allTaskList();
 
-            table.appendChild(tr);
-            taskTableUi.storedTasks();
+      table.appendChild(tr);
+      taskTableUi.storedTasks();
+      taskCard.storedTasks();
 
-            allTask.classList.add("active");
-            todayBtn.classList.remove("active");
-            impBtn.classList.remove("active");
-            compBtn.classList.remove("active");
-            expBtn.classList.remove("active");
-            checkBox();
-            updateButton();
-            submit();
-        })
-    }
+      allTask.classList.add("active");
+      todayBtn.classList.remove("active");
+      impBtn.classList.remove("active");
+      compBtn.classList.remove("active");
+      expBtn.classList.remove("active");
+      checkBox();
+      updateButton();
+      submit();
+      updateCardButton();
+      submitCardUpdate();
+    });
+  };
 
-    const todBtn = () => {
-        todayBtn.addEventListener("click", () => {
-            const table = document.querySelector("table");
-            table.textContent = "";
+  const todBtn = () => {
+    todayBtn.addEventListener("click", () => {
+      const table = document.querySelector("table");
+      table.textContent = "";
 
-            const { tr } = allTasksList.allTaskList();
+      const taskList = document.querySelector(".task-list");
+      if (taskList) taskList.textContent = "";
 
-            table.appendChild(tr);
-            taskTableUi.filteredTask();
+      const { tr } = allTasksList.allTaskList();
 
-            todayBtn.classList.add("active");
-            allTask.classList.remove("active");
-            impBtn.classList.remove("active");
-            compBtn.classList.remove("active");
-            expBtn.classList.remove("active");
-            checkBox();
-            updateButton();
-            submit();
-        })
-    }
+      table.appendChild(tr);
+      taskTableUi.filteredTask();
+      taskCard.filteredTask();
 
-    const impoBtn = () => {
-        impBtn.addEventListener("click", () => {
-            
-            const table = document.querySelector("table");
-            table.textContent = "";
+      todayBtn.classList.add("active");
+      allTask.classList.remove("active");
+      impBtn.classList.remove("active");
+      compBtn.classList.remove("active");
+      expBtn.classList.remove("active");
+      checkBox();
+      updateButton();
+      submit();
+      updateCardButton();
+      submitCardUpdate();
+    });
+  };
 
-            const { tr } = allTasksList.allTaskList();
+  const impoBtn = () => {
+    impBtn.addEventListener("click", () => {
+      const table = document.querySelector("table");
+      table.textContent = "";
 
-            table.appendChild(tr);
-            
-            table.appendChild(tr);
-            taskTableUi.filteredTaskOnPriority();
+      const taskList = document.querySelector(".task-list");
+      if (taskList) taskList.textContent = "";
 
-            impBtn.classList.add("active");
-            todayBtn.classList.remove("active");
-            allTask.classList.remove("active");
-            compBtn.classList.remove("active");
-            expBtn.classList.remove("active");
-            checkBox();
-            updateButton();
-            submit();
-        })
-    }
+      const { tr } = allTasksList.allTaskList();
 
-    const completeBtn = () => {
-        compBtn.addEventListener("click", () => {
-            const formDiv = document.querySelector(".form");
-            const table = document.querySelector("table");
-            table.textContent = "";
+      table.appendChild(tr);
 
-            const { tr } = allTasksList.allTaskList();
+      table.appendChild(tr);
+      taskTableUi.filteredTaskOnPriority();
+      taskCard.filteredTaskOnPriority();
 
-            table.appendChild(tr);
-            
-            table.appendChild(tr);
-            taskTableUi.filteredTaskOnComplete();
+      impBtn.classList.add("active");
+      todayBtn.classList.remove("active");
+      allTask.classList.remove("active");
+      compBtn.classList.remove("active");
+      expBtn.classList.remove("active");
+      checkBox();
+      updateButton();
+      submit();
+      updateCardButton();
+      submitCardUpdate();
+    });
+  };
 
-            impBtn.classList.remove("active");
-            todayBtn.classList.remove("active");
-            allTask.classList.remove("active");
-            compBtn.classList.add("active");
-            expBtn.classList.remove("active");
-            checkBox();
-            updateButton();
-            submit();
-        })
-    }
+  const completeBtn = () => {
+    compBtn.addEventListener("click", () => {
+      const formDiv = document.querySelector(".form");
+      const table = document.querySelector("table");
+      table.textContent = "";
 
-    const expiredBtn = () => {
-        expBtn.addEventListener("click", () => {
-            const table = document.querySelector("table");
-            table.textContent = "";
+      const taskList = document.querySelector(".task-list");
+      if (taskList) taskList.textContent = "";
 
-            const { tr } = allTasksList.allTaskList();
+      const { tr } = allTasksList.allTaskList();
 
-            table.appendChild(tr);
-            taskTableUi.filteredTaskOnExpired();
+      table.appendChild(tr);
 
-            impBtn.classList.remove("active");
-            todayBtn.classList.remove("active");
-            allTask.classList.remove("active");
-            compBtn.classList.remove("active");
-            expBtn.classList.add("active");
-            checkBox();
-            updateButton();
-            submit();
-        })
-    }
+      table.appendChild(tr);
+      taskTableUi.filteredTaskOnComplete();
+      taskCard.filteredTaskOnComplete();
 
-    return {initTaskAddLoad, allTaskBtn, todBtn, impoBtn, completeBtn, expiredBtn };
+      impBtn.classList.remove("active");
+      todayBtn.classList.remove("active");
+      allTask.classList.remove("active");
+      compBtn.classList.add("active");
+      expBtn.classList.remove("active");
+      checkBox();
+      updateButton();
+      submit();
+      updateCardButton();
+      submitCardUpdate();
+    });
+  };
+
+  const expiredBtn = () => {
+    expBtn.addEventListener("click", () => {
+      const table = document.querySelector("table");
+      table.textContent = "";
+
+      const taskList = document.querySelector(".task-list");
+      if (taskList) taskList.textContent = "";
+
+      const { tr } = allTasksList.allTaskList();
+
+      table.appendChild(tr);
+      taskTableUi.filteredTaskOnExpired();
+      taskCard.filteredTaskOnExpired();
+
+      impBtn.classList.remove("active");
+      todayBtn.classList.remove("active");
+      allTask.classList.remove("active");
+      compBtn.classList.remove("active");
+      expBtn.classList.add("active");
+      checkBox();
+      updateButton();
+      submit();
+      updateCardButton();
+      submitCardUpdate();
+    });
+  };
+
+  return {
+    initTaskAddLoad,
+    allTaskBtn,
+    todBtn,
+    impoBtn,
+    completeBtn,
+    expiredBtn,
+  };
 })();

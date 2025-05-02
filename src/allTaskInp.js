@@ -1,14 +1,20 @@
 export const allTasksInp = (() => {
     const allTaskInp = () => {
+        const div2 = document.createElement("div");
+        div2.classList.add("formDiv2");
         const form = document.createElement("form");
         const label1 = document.createElement("label");
         const inputTask = document.createElement("input");
         inputTask.type = "text";
         inputTask.name = "task";
         inputTask.id = "task";
-        inputTask.placeholder = "What's on your mind today?"
+        inputTask.placeholder = "What's on your mind?"
         label1.appendChild(inputTask);
-        form.appendChild(label1);
+        div2.appendChild(label1);
+        
+
+        const div1 = document.createElement("div");
+        div1.classList.add("formDiv1");
 
         const div = document.createElement("div");
         div.classList.add("select-wrapper");
@@ -31,7 +37,8 @@ export const allTasksInp = (() => {
         const i = document.createElement("i");
         i.classList.add("fas", "fa-angle-down");
         div.appendChild(i);
-        form.appendChild(div);
+        div2.appendChild(div);
+        form.appendChild(div2);
 
         const label2 = document.createElement("label");
         const input2 = document.createElement("input");
@@ -39,13 +46,17 @@ export const allTasksInp = (() => {
         input2.name = "dueDate";
         input2.id = "dueDate";
         label2.appendChild(input2);
-        form.appendChild(label2);
+
+        div1.appendChild(label2);
+        
 
         const btn = document.createElement("button");
         btn.type = "submit";
         btn.classList.add("addTaskBtn");
         btn.textContent= "Add task";
-        form.appendChild(btn);
+        div1.appendChild(btn);
+
+        form.appendChild(div1);
 
         return { form, inputTask, select, input2, btn };
     }
