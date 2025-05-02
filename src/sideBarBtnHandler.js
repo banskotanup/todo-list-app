@@ -9,6 +9,7 @@ import { submitCardUpdate, updateCardButton } from "./updateCardBtn";
 
 export const sidebarBtnHandler = (() => {
   const sectionBody = document.querySelector(".body");
+  const welcomeText = document.querySelector(".welcome-back");
 
   const allTask = document.querySelector(".allTaskBtn");
   const todayBtn = document.querySelector(".todayBtn");
@@ -18,6 +19,7 @@ export const sidebarBtnHandler = (() => {
 
   const initTaskAddLoad = () => {
     document.addEventListener("DOMContentLoaded", () => {
+      welcomeText.textContent = "Welcome BACK";
       const table = document.querySelector("table");
       const formDiv = document.querySelector(".form");
 
@@ -46,6 +48,7 @@ export const sidebarBtnHandler = (() => {
 
   const allTaskBtn = () => {
     allTask.addEventListener("click", () => {
+      welcomeText.textContent = "Welcome BACK";
       const table = document.createElement("table");
       table.textContent = "";
 
@@ -73,6 +76,7 @@ export const sidebarBtnHandler = (() => {
 
   const todBtn = () => {
     todayBtn.addEventListener("click", () => {
+      welcomeText.textContent = "Today's TASKS";
       const table = document.querySelector("table");
       table.textContent = "";
 
@@ -100,6 +104,7 @@ export const sidebarBtnHandler = (() => {
 
   const impoBtn = () => {
     impBtn.addEventListener("click", () => {
+      welcomeText.textContent = "Important TASKS";
       const table = document.querySelector("table");
       table.textContent = "";
 
@@ -129,6 +134,7 @@ export const sidebarBtnHandler = (() => {
 
   const completeBtn = () => {
     compBtn.addEventListener("click", () => {
+      welcomeText.textContent = "Completed TASKS";
       const formDiv = document.querySelector(".form");
       const table = document.querySelector("table");
       table.textContent = "";
@@ -159,6 +165,7 @@ export const sidebarBtnHandler = (() => {
 
   const expiredBtn = () => {
     expBtn.addEventListener("click", () => {
+      welcomeText.textContent = "Expired TASKS";
       const table = document.querySelector("table");
       table.textContent = "";
 

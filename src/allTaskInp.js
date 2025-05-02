@@ -45,6 +45,7 @@ export const allTasksInp = (() => {
         input2.type = "date";
         input2.name = "dueDate";
         input2.id = "dueDate";
+        input2.placeholder = "Date";
         label2.appendChild(input2);
 
         div1.appendChild(label2);

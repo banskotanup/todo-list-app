@@ -247,14 +247,15 @@ aside section{
 }
 
 footer{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
     height: 60px;
     box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
 }
 
 footer p{
-    margin-top: 25px;
     color: #6b7283;
 }
 
