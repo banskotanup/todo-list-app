@@ -1,105 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="709f805cb63b30c7d4de.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Spice&family=Bungee+Tint&family=Bytesized&family=Jersey+10&family=Jersey+15&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="709f805cb63b30c7d4de.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Spice&family=Bungee+Tint&family=Bytesized&family=Jersey+10&family=Jersey+15&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Todo App</title>
-<script defer src="main.js"></script></head>
-<body>
+  <script defer src="main.js"></script></head>
+  <body>
     <header>
-        <div class="head-menu">
-            <h1>ToDo App</h1>
-            <button id="menu-toggle">☰</button>
-        </div>
-        <p>👋 Hello, <span class="userName">Anup</span>! Welcome BACK.</p>
-        <p class="date">📅 <script>document.write(new Date().toLocaleDateString("en-ca"))</script></p>
+      <div class="head-menu">
+        <h1>ToDo App</h1>
+        <button id="menu-toggle">☰</button>
+      </div>
+      <p>👋 Hello, <span class="userName">Anup</span>! Welcome BACK.</p>
+      <p class="date">
+        📅
+        <script>
+          document.write(new Date().toLocaleDateString("en-ca"));
+        </script>
+      </p>
     </header>
     <div class="header">
-        <div class="date-greet">
-            <p>👋 Hello, <span class="mobUserName">Anup</span>!</p>
-            <p class="date">📅 <script>document.write(new Date().toLocaleDateString("en-ca"))</script></p>
-        </div>
-        <hr>
-        
-        <p class="welcome-back">Welcome BACK.</p>
+      <div class="date-greet">
+        <p>👋 Hello, <span class="mobUserName">Anup</span>!</p>
+        <p class="date">
+          📅
+          <script>
+            document.write(new Date().toLocaleDateString("en-ca"));
+          </script>
+        </p>
+      </div>
+      <hr />
+
+      <p class="welcome-back">Welcome BACK.</p>
     </div>
     <main>
-        <aside>
-            <section class="up-sidebar">
-                <div class="home">
-                    <h2>Home</h2>
-                </div>
-                <hr>
-                <div class="home-sidebar-content">
-                    <div >
-                        <button class="allTaskBtn active"><i class="fas fa-tasks"></i> All Tasks</button>
-                    </div>
-                    <div>
-                        <button class="todayBtn"><i class="fas fa-calendar-day"></i> Today</button>
-                    </div>
-                    <div>
-                        <button class="impBtn"><i class="fas fa-star"></i> Important</button>
-                    </div>
-                    <div>
-                        <button class="expBtn"><i class="fas fa-times"></i> Expired</button>
-                    </div>
-                    <div>
-                        <button class="compBtn"><i class="fas fa-check-double"></i> Completed</button>
-                    </div>
-                </div>
-            </section>
-            <section class="low-sidebar">
-                <div class="project-header">
-                    <p>Project <span>(1)</span></p>
-                    <i class="fas fa-plus-circle"></i>
-                </div>
-                <hr>
-                <div class="default-project">
-                    <p>Default Project</p>
-                    <div class="btn">
-                        <button><i class="fas fa-edit" style="color: #1b1b1d;"></i></button>
-                        <button><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-                <div class="btn-add">
-                    <button><i class="fas fa-plus"></i> Add Project</button>
-                </div>
-
-            </section>
-        </aside>
-        <section class="body">
-            <div class="form">
-
+      <aside>
+        <section class="up-sidebar">
+          <div class="home">
+            <h2>Home</h2>
+          </div>
+          <hr />
+          <div class="home-sidebar-content">
+            <div>
+              <button class="allTaskBtn active">
+                <i class="fas fa-tasks"></i> All Tasks
+              </button>
             </div>
-            <hr>
-            <table>
-                
-            </table>
+            <div>
+              <button class="todayBtn">
+                <i class="fas fa-calendar-day"></i> Today
+              </button>
+            </div>
+            <div>
+              <button class="impBtn">
+                <i class="fas fa-star"></i> Important
+              </button>
+            </div>
+            <div>
+              <button class="expBtn">
+                <i class="fas fa-times"></i> Expired
+              </button>
+            </div>
+            <div>
+              <button class="compBtn">
+                <i class="fas fa-check-double"></i> Completed
+              </button>
+            </div>
+          </div>
         </section>
+        <section class="low-sidebar">
+          <div class="project-header">
+            <p>Project <span>(1)</span></p>
+            <i class="fas fa-plus-circle"></i>
+          </div>
+          <hr />
+          <div class="default-project">
+            <p>Default Project</p>
+            <div class="btn">
+              <button>
+                <i class="fas fa-edit" style="color: #1b1b1d"></i>
+              </button>
+              <button><i class="fas fa-trash"></i></button>
+            </div>
+          </div>
+          <div class="btn-add">
+            <button><i class="fas fa-plus"></i> Add Project</button>
+          </div>
+        </section>
+      </aside>
+      <section class="body">
+        <div class="form"></div>
+        <hr />
+        <table></table>
+        <div class="task-list">
+      
+        </div>
+      </section>
     </main>
     <footer>
-        <p>Anup Banskota © <script>document.write(new Date().getFullYear())</script></p>
+      <p>
+        Anup Banskota ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
     </footer>
 
-    <dialog class="initNameInp"> 
-        <div class="dialog">
-            <h2>Enter your name to proceed</h2>
+    <dialog class="initNameInp">
+      <div class="dialog">
+        <h2>Enter your name to proceed</h2>
         <form action="">
-            <label>
-                <input type="text" name="name" id="name" placeholder="Please enter your name"/>
-            </label>
-            <button type="button" class="initNameSubmit">Submit</button>
+          <label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Please enter your name"
+            />
+          </label>
+          <button type="button" class="initNameSubmit">Submit</button>
         </form>
-        </div>
+      </div>
     </dialog>
-    
-</body>
+  </body>
 </html>
